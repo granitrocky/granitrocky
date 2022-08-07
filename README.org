@@ -2,12 +2,6 @@
 #+EMAIL: J.Kenyon@ordinarygizmos.com
 #+OPTIONS: toc:nil
 #+OPTIONS: title:nil
-* Me
-* Projects
-** Ardux
-** Inkeys
-** 
-* Socials
-  | Platform | Username    |
-  |----------+-------------|
-  | Discord  | granitrocky |
+I am always finding new things to be interested in. I've been writing programs since I was 10, making stick figure games in Visual Basic 6.
+  
+I am also a certified forklift driver.

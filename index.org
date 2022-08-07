@@ -1,0 +1,14 @@
+* Projects
+** Artsey/Ardux
+   About a year ago I was looking into handheld keyboards and I came across [[https://artsey.io/][Artsey]], an 8 key keyboard capable of typing any character. I was intrigued. I ordered a [[https://github.com/arduxio/thepaintbrush][Paintbrush]] and started learning.
+
+   It has been about a year, and my typing speed is roughly where I was with qwerty. 50ish wpm. I was never the fastest typist.
+
+   These days I daily drive half of a slightly modified 40 percent keyboard I call the Fatlad (a modified version of the [[https://github.com/MangoIV/dracuLad][dracuLad]] keyboard). I've found a wonderful space for others like me who are interested in pushing the boundaries of traditional input devices. We call ourselves [[*Inkeys][Inkeys]], short for Inclusive Keyboards, but really we discuss any kind of alternate system.
+** Inkeys
+   I have recently been made admin of the Inkeys project
+     | Links   |
+     |---------|
+     | [[https://discord.gg/DuhCnV9Keh][Discord]] |
+     | [[https://inkeys.wiki/en/home][Wiki]]    |
+     |         |
