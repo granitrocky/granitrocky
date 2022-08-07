@@ -1,0 +1,30 @@
+#+TITLE: Embedded Software Engineer
+#+AUTHOR: Jonny Kenyon
+#+EMAIL: J.Kenyon@ordinarygizmos.com
+#+ADDRESS: 2226 Mayfair Rd
+#+ADDRESS: Golden Valley, MN 55427
+#+MOBILE: (612) 545 - 7145
+#+HOMEPAGE: https://granitrocky.github.io/granitrocky/
+#+GITHUB: granitrocky
+#+LINKEDIN: https://www.linkedin.com/in/jonathan-kenyon-52229557/
+#+LATEX_HEADER: \geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm}
+
+* Employment
+** Complete EDI
+:PROPERTIES:
+:CV_ENV: cventry
+:FROM:     <2021-03-01>
+:TO:     present
+:EMPLOYER: Complete EDI
+:END:
+Stuff
+
+* COMMENT latex format
+#+latex: \marginpar{
+* Personal Projects
+* COMMENT \latex format
+  #+latex: }
+* COMMENT export commands
+  (setq org-export-backends '(ascii html icalendar latex odt altacv))
+  (org-export-to-file 'altacv "cv.tex")
+  (org-latex-compile "cv.tex")
