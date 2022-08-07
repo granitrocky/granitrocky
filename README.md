@@ -1,4 +1,4 @@
-* Just curious if Org files work here
+I am a generalist with special interests in open source hardware and game development.
 
 <!--
 **granitrocky/granitrocky** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
