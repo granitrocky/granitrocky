@@ -2,6 +2,8 @@
 #+EMAIL: J.Kenyon@ordinarygizmos.com
 #+OPTIONS: toc:nil
 #+OPTIONS: num:nil
+#+OPTIONS: date:nil
+#+OPTIONS: html-style:nil
 #+SETUPFILE: ~/.emacs.d/org-themes/white_clean.theme
 
 * Projects
@@ -17,4 +19,3 @@
      |---------|
      | [[https://discord.gg/DuhCnV9Keh][Discord]] |
      | [[https://inkeys.wiki/en/home][Wiki]]    |
-     |         |
