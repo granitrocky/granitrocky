@@ -4,7 +4,8 @@
 #+OPTIONS: num:nil
 #+OPTIONS: date:nil
 #+OPTIONS: html-style:nil
-#+SETUPFILE: ~/.emacs.d/org-themes/white_clean.theme
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://gongzhitaao.org/orgcss/org.css"/>
+
 
 * Projects
 ** Artsey/Ardux

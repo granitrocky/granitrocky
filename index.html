@@ -3,409 +3,13 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-08-07 Sun 15:59 -->
+<!-- 2022-08-07 Sun 16:04 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>About Me</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Jonathan Kenyon" />
-<style type="text/css">
-/******************************************************
-* I copied these styles from markdotto.com, who is
-* the creator of bootstrap, and I also did some
-* modification. Thanks Mark for the beautiful theme,
-* so I reserved the @mdo sign below.
-*****************************************************/
-
-/*
-__
-__                  /\ \
-/'_`\_    ___ ___    \_\ \    ___
-/'/'_` \ /' __` __`\  /'_` \  / __`\
-/\ \ \L\ \/\ \/\ \/\ \/\ \L\ \/\ \L\ \
-\ \ `\__,_\ \_\ \_\ \_\ \___,_\ \____/
-\ `\_____\\/_/\/_/\/_/\/__,_ /\/___/
-`\/_____/
-
-*/
-
-
-
-/* Body resets
--------------------------------------------------- */
-
-* {
--webkit-box-sizing:  border-box;
--moz-box-sizing:  border-box;
-box-sizing:  border-box;
-}
-html, body {
-margin:  0;
-padding:  0;
-}
-html {
-font-size:  62.5%;
-}
-body {
-padding:  20px;
-font-family:  Menlo, Monaco, monospace;
-font-size:  14px;
-line-height:  1.5;
-color:  #666;
-background-color:  #fff;
-}
-p {
-margin:  0 0 20px;
-}
-h1, h2, h3 {
-position:  relative;
-margin:  30px 0 20px;
-font-size:  18px;
-font-weight:  bold;
-line-height:  1.1;
-color:  #111;
-text-rendering:  optimizeLegibility;
-}
-h1:before, h2:before, h3:before {
-position:  absolute;
-top:  auto;
-color:  #ccc;
-display:  none;
-}
-h1:before {
-content:  "";
-left:  -1.25em;
-}
-h2:before {
-content:  "*";
-left:  -2em;
-}
-h3:before {
-content:  "**";
-left:  -2.5em;
-}
-i, em, b, strong {
-padding-left:  .1em;
-padding-right:  .1em;
-}
-b, strong {
-font-weight:  bold;
-color:  #333;
-}
-b:before, b: after, strong:before, strong: after {
-content:  "*";
-}
-i:before, i: after, em:before, em: after {
-content:  "/";
-}
-hr {
-margin:  0;
-border:  0;
-}
-hr: after {
-display:  block;
-margin:  20px 0;
-content:  "----------------------------------------------------------------";
-color:  #ccc;
-}
-ul, ol {
-padding:  0;
-margin:  0 0 20px;
-}
-code, pre {
-font-family:  Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-code {
-color:  #d14;
-}
-code:before, code: after {
-content:  "=";
-color:  #ccc;
-}
-pre {
-display:  block;
-margin:  0 0 14px;
-padding:  15px;
-border-radius:  3px 3px 3px 3px;
-font-size:  18px;
-line-height:  28px;
-background-color:  #f5f5f5;
-white-space:  pre;
-white-space:  pre-wrap;
-word-break:  break-all;
-word-wrap:  break-word;
-}
-blockquote {
-padding:  0 0 0 20px;
-margin:  0 30px 20px -22.5px;
-color:  #999;
-border-left:  8px solid #e5e5e5;
-}
-blockquote p: last-child {
-margin-bottom:  0;
-}
-img {
-display:  block;
-margin:  0;
-border-radius:  5px;
-}
-a {
-font-weight:  inherit;
-line-height:  inherit;
-color:  #000;
-text-decoration:  none;
-}
-sup a:before {
-content:  "[";
-}
-sup a: after {
-content:  "]";
-}
-a: hover {
-text-decoration:  underline;
-}
-table {
-line-height:  2.5;
-margin-bottom:  15px;
-max-width:  100%;
-width:  100%;
-}
-table td, table th {
-padding:  0 15px;
-}
-table th.left, table td.left {
-text-align:  left;
-}
-table th.right, table td.right {
-text-align:  right;
-}
-/******************************************************/
-/* body */
-body {
-margin:  0 auto;
-max-width:  770px;
-}
-/* head */
-.masthead {
-color:  #888;
-}
-.masthead: after {
-display:  block;
-content:  '----------------------------------------------------------------';
-margin:  10px 0;
-color:  #ccc;
-}
-.masthead a {
-color:  #333;
-}
-.masthead ul {
-list-style:  none;
-}
-.masthead li {
-display:  inline-block;
-}
-.masthead li + li:before {
-display:  inline-block;
-content:  "\00B7 \00a0";
-color:  #ccc;
-}
-/* searchform*/
-#searchform {
-position:  absolute;
-top:  54px;
-right:  30.4%;
-}
-#searchform #s {
-background:  url("/media/img/search.png") no-repeat 5px 6px;
-box-shadow:  inset 0 1px 1px rgba(0,0,0,0.1);
-border:  1px solid #ddd;
-border-radius:  2px;
--moz-border-radius:  2px;
-width:  90px;
-height:  30px;
-line-height:  12px;
-padding:  4px 10px 4px 28px;
-
--webkit-transition-duration:  400ms;
--webkit-transition-property:  width, background;
--webkit-transition-timing-function:  ease;
--moz-transition-duration:  400ms;
--moz-transition-property:  width, background;
--moz-transition-timing-function:  ease;
--o-transition-duration:  400ms;
--o-transition-property:  width, background;
--o-transition-timing-function:  ease;
-}
-#searchform #s: focus {
-background-color:  #f9f9f9;
-width:  160px;
-}
-.masthead img.avatar {
-position:  relative;
-float:  right;
-margin-top:  -100px;
-margin-bottom:  -100%;
-margin-right:  10%;
-width:  200px;
-background-color:  #fff;
-}
-/* post */
-.post {
-position:  relative;
-}
-.post: after {
-display:  block;
-content:  "----------------------------------------------------------------";
-color:  #ccc;
-}
-.post img {
-max-width:  100%;
-}
-.post li {
-list-style:  none outside none;
-}
-.post ul > li:before {
-content:  "- ";
-margin-left:  -1.25em;
-color:  #ccc;
-}
-.post ol {
-counter-reset:  o-list;
-}
-.post ol > li:before {
-content:  counter(o-list) ") ";
-counter-increment:  o-list;
-margin-left:  -1.85em;
-color:  #ccc;
-}
-
-/* special for li in pre */
-.post pre li {
-list-style-type:  decimal;
-}
-
-.post pre li:before {
-display:  none;
-}
-
-/* meta info */
-.post-info {
-display:  inline-block;
-margin:  -10px 0 -10px;
-color:  #999;
-}
-.post-info + .post-info:before {
-content:  "\2223 \00a0";
-}
-.post-meta: after {
-content:  "----------------------------------------------------------------";
-display:  block;
-margin-top:  -1px;
-color:  #ccc;
-}
-
-/* table of content */
-#table-of-contents {
-position:  fixed;
-right:  0em;
-top:  0em;
-border: 1px solid #e1e1e8;
--webkit-box-shadow:  0 0 1em #777777;
--moz-box-shadow:  0 0 1em #777777;
--webkit-border-bottom-left-radius:  5px;
--moz-border-radius-bottomleft:  5px;
-text-align:  center;
-/* ensure doesn't flow off the screen when expanded */
-max-height:  80%;
-overflow:  auto;
-z-index:  200;
-}
-
-#table-of-contents h2 {
-max-width:  20em;
-font-weight:  normal;
-padding-left:  0.5em;
-padding-top:  0.05em;
-padding-bottom:  0.05em;
-}
-
-#table-of-contents ul {
-margin-left:  14pt;
-margin-bottom:  10pt;
-padding:  0
-}
-
-#table-of-contents li {
-padding:  0;
-margin:  1px;
-list-style:  none;
-}
-
-#table-of-contents ul>: first-child {
-color:  blue;
-}
-
-#table-of-contents #text-table-of-contents {
-display:  none;
-text-align:  left;
-}
-
-#table-of-contents: hover #text-table-of-contents {
-display:  block;
-padding:  0.5em;
-margin-top:  -1.5em;
-}
-
-/* footer */
-.footer {
-margin:  80px 0 0;
-text-align:  center;
-font-size:  15px;
-color:  #999;
-}
-.footer > p {
-margin:  0;
-line-height:  1.5;
-}
-.footpara {
-display:  inline;
-}
-
-/* Responsive
--------------------------------------------------- */
-
-@media (min-width:  768px) {
-/* Increase body padding and font-sizes */
-body {
-padding:  30px;
-font-size:  18px;
-line-height:  1.75;
-}
-h1:before, h2:before, h3:before {
-display:  inline;
-}
-}
-
-@media (min-width:  1024px) {
-body {
-padding:  30px;
-}
-}
-</style>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded',function() {
-document.getElementById("table-of-contents").onclick = function() {
-var elem = document.getElementById("text-table-of-contents");
-elem.style.display = elem.style.display == "block" ? "none" : "block";
-}
-});
-
-var url = document.location.href;
-var orgsource = url.substring(0, url.lastIndexOf("."))+".org.html";
-function show_org_source(){
-document.location.href = orgsource;
-}
-</script>
+<link rel="stylesheet" type="text/css" href="https://gongzhitaao.org/orgcss/org.css"/>
 <script type="text/javascript">
 // @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
@@ -433,13 +37,14 @@ document.location.href = orgsource;
 <div id="content">
 <h1 class="title">About Me</h1>
 
-<div id="outline-container-orgb88d9a2" class="outline-2">
-<h2 id="orgb88d9a2">Projects</h2>
-<div class="outline-text-2" id="text-orgb88d9a2">
+
+<div id="outline-container-org5aeea57" class="outline-2">
+<h2 id="org5aeea57">Projects</h2>
+<div class="outline-text-2" id="text-org5aeea57">
 </div>
-<div id="outline-container-org58f6555" class="outline-3">
-<h3 id="org58f6555">Artsey/Ardux</h3>
-<div class="outline-text-3" id="text-org58f6555">
+<div id="outline-container-orgb80fb3e" class="outline-3">
+<h3 id="orgb80fb3e">Artsey/Ardux</h3>
+<div class="outline-text-3" id="text-orgb80fb3e">
 <p>
 About a year ago I was looking into handheld keyboards and I came across <a href="https://artsey.io/">Artsey</a>, an 8 key keyboard capable of typing any character. I was intrigued. I ordered a <a href="https://github.com/arduxio/thepaintbrush">Paintbrush</a> and started learning.
 </p>
@@ -449,13 +54,13 @@ It has been about a year, and my typing speed is roughly where I was with qwerty
 </p>
 
 <p>
-These days I daily drive half of a slightly modified 40 percent keyboard I call the Fatlad (a modified version of the <a href="https://github.com/MangoIV/dracuLad">dracuLad</a> keyboard). I've found a wonderful space for others like me who are interested in pushing the boundaries of traditional input devices. We call ourselves <a href="#orga913bfe">Inkeys</a>, short for Inclusive Keyboards, but really we discuss any kind of alternate system.
+These days I daily drive half of a slightly modified 40 percent keyboard I call the Fatlad (a modified version of the <a href="https://github.com/MangoIV/dracuLad">dracuLad</a> keyboard). I've found a wonderful space for others like me who are interested in pushing the boundaries of traditional input devices. We call ourselves <a href="#org83a92f8">Inkeys</a>, short for Inclusive Keyboards, but really we discuss any kind of alternate system.
 </p>
 </div>
 </div>
-<div id="outline-container-orga913bfe" class="outline-3">
-<h3 id="orga913bfe">Inkeys</h3>
-<div class="outline-text-3" id="text-orga913bfe">
+<div id="outline-container-org83a92f8" class="outline-3">
+<h3 id="org83a92f8">Inkeys</h3>
+<div class="outline-text-3" id="text-org83a92f8">
 <p>
 I have recently been made admin of the Inkeys project.
 </p>
@@ -486,7 +91,7 @@ I have recently been made admin of the Inkeys project.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jonathan Kenyon</p>
-<p class="date">Created: 2022-08-07 Sun 15:59</p>
+<p class="date">Created: 2022-08-07 Sun 16:04</p>
 </div>
 </body>
 </html>
