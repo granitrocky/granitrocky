@@ -1,22 +1,41 @@
 
-# Table of Contents
-
-1.  [Me](#orgb893a00)
-2.  [Projects](#orgf9d9f80)
-3.  [Socials](#org34a7f45)
-
-
-<a id="orgb893a00"></a>
 
 # Me
 
 
-<a id="orgf9d9f80"></a>
-
 # Projects
 
 
-<a id="org34a7f45"></a>
+## Ardux
+
+
+## Inkeys
+
+
+## 
+
 
 # Socials
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Platform</td>
+<td class="org-left">Username</td>
+</tr>
+
+
+<tr>
+<td class="org-left">Discord</td>
+<td class="org-left">granitrocky</td>
+</tr>
+</tbody>
+</table>
 

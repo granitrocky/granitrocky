@@ -1,4 +1,13 @@
+#+TITLE: About Me
+#+EMAIL: J.Kenyon@ordinarygizmos.com
+#+OPTIONS: toc:nil
+#+OPTIONS: title:nil
 * Me
 * Projects
+** Ardux
+** Inkeys
+** 
 * Socials
-  
+  | Platform | Username    |
+  | Discord  | granitrocky |
+
