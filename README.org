@@ -9,5 +9,5 @@
 ** 
 * Socials
   | Platform | Username    |
+  |----------+-------------|
   | Discord  | granitrocky |
-

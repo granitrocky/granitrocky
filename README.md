@@ -25,13 +25,14 @@
 
 <col  class="org-left" />
 </colgroup>
-<tbody>
+<thead>
 <tr>
-<td class="org-left">Platform</td>
-<td class="org-left">Username</td>
+<th scope="col" class="org-left">Platform</th>
+<th scope="col" class="org-left">Username</th>
 </tr>
+</thead>
 
-
+<tbody>
 <tr>
 <td class="org-left">Discord</td>
 <td class="org-left">granitrocky</td>
