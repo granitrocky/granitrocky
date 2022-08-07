@@ -1,3 +1,8 @@
+#+TITLE: About Me
+#+EMAIL: J.Kenyon@ordinarygizmos.com
+#+OPTIONS: toc:nil
+#+OPTIONS: title:nil
+#+SETUPFILE: ~/.emacs.d/org-themes/white_clean.theme
 * Projects
 ** Artsey/Ardux
    About a year ago I was looking into handheld keyboards and I came across [[https://artsey.io/][Artsey]], an 8 key keyboard capable of typing any character. I was intrigued. I ordered a [[https://github.com/arduxio/thepaintbrush][Paintbrush]] and started learning.
