@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-08-10 Wed 15:12 -->
+<!-- 2022-08-10 Wed 15:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>@granitrocky</title>
@@ -16,23 +16,23 @@
 <h1 class="title">@granitrocky</h1>
 
 
-<div id="outline-container-orgdf5e32c" class="outline-2">
-<h2 id="orgdf5e32c">Projects</h2>
-<div class="outline-text-2" id="text-orgdf5e32c">
+<div id="outline-container-org55d7ab4" class="outline-2">
+<h2 id="org55d7ab4">Projects</h2>
+<div class="outline-text-2" id="text-org55d7ab4">
 </div>
-<div id="outline-container-org026f0e4" class="outline-3">
-<h3 id="org026f0e4">Artsey glove</h3>
-<div class="outline-text-3" id="text-org026f0e4">
+<div id="outline-container-orgd114be3" class="outline-3">
+<h3 id="orgd114be3">Artsey glove</h3>
+<div class="outline-text-3" id="text-orgd114be3">
 <p>
-I fell in love with <a href="#org62e70fa">Artsey/Ardux</a> a while back, and I've wanted to figure out how to put one on my hands at all times. Someone in the Inkeys discord had an idea about having all the keys on a straight line instead of on 2 lines, and I thought it could be cool to put that onto 2 gloves and type that way.
+I fell in love with <a href="#org1ad5486">Artsey/Ardux</a> a while back, and I've wanted to figure out how to put one on my hands at all times. Someone in the Inkeys discord had an idea about having all the keys on a straight line instead of on 2 lines, and I thought it could be cool to put that onto 2 gloves and type that way.
 </p>
 
 <p>
 The StraEyio gloves were born
 </p>
 
-<div id="org7b5cb91" class="figure">
-<p><img src="media/gloves.jpg" alt="First Prototype" width="200px" height="400px" />
+<div id="org5c38a9b" class="figure">
+<p><img src="media/gloves.jpg" alt="First Prototype" width="400px" height="711px" />
 </p>
 </div>
 
@@ -49,11 +49,40 @@ After this first attempt, I thought I might need to change my approach. Rather t
 As of now, it's still WIP, but I want to share the bit of code I added to the QMK firmware for this. It is scanning all the defined key pins for an analog value and if it's at a certain threshold then the magnet has moved far enough away from the sensor to trigger a keypress. I will need to find an entry into ZMK to be able to do this wirelessly, however.
 </p>
 </div>
-<div id="outline-container-orge885447" class="outline-4">
-<h4 id="orge885447">TBA</h4>
-<div class="outline-text-4" id="text-orge885447">
+<div id="outline-container-orgad02996" class="outline-4">
+<h4 id="orgad02996"><code>straeyio.c</code></h4>
+<div class="outline-text-4" id="text-orgad02996">
 <div class="org-src-container">
-<pre class="src src-c">
+<pre class="src src-c"><span style="color: #7c6f64;">//</span><span style="color: #7c6f64;">This header is just the layout file.</span>
+<span style="color: #fe8019;">#include</span> <span style="color: #b8bb26;">"straeyio.h"</span>
+
+<span style="color: #fe8019;">#include</span> <span style="color: #b8bb26;">"analog.h"</span>
+
+<span style="color: #d3869b;">void</span> <span style="color: #fabd2f;">keyboard_post_init_kb</span>(<span style="color: #d3869b;">void</span>){
+    analogReference(ADC_REF_POWER);
+}
+<span style="color: #fb4933;">static</span> <span style="color: #d3869b;">pin_t</span> <span style="color: #83a598;">direct_pins</span>[MATRIX_ROWS][MATRIX_COLS] = DIRECT_PINS;
+<span style="color: #d3869b;">void</span> <span style="color: #fabd2f;">matrix_read_cols_on_row</span>(<span style="color: #d3869b;">matrix_row_t</span> <span style="color: #83a598;">current_matrix</span>[], <span style="color: #d3869b;">uint8_t</span> <span style="color: #83a598;">current_row</span>) {
+    <span style="color: #7c6f64;">// </span><span style="color: #7c6f64;">Start with a clear matrix row</span>
+    <span style="color: #d3869b;">matrix_row_t</span> <span style="color: #83a598;">current_row_value</span> = 0;
+
+    <span style="color: #d3869b;">matrix_row_t</span> <span style="color: #83a598;">row_shifter</span> = MATRIX_ROW_SHIFTER;
+    <span style="color: #fb4933;">for</span> (<span style="color: #d3869b;">uint8_t</span> <span style="color: #83a598;">col_index</span> = 0; col_index &lt; MATRIX_COLS; col_index++, row_shifter &lt;&lt;= 1) {
+        <span style="color: #d3869b;">pin_t</span> <span style="color: #83a598;">pin</span> = direct_pins[current_row][col_index];
+        <span style="color: #7c6f64;">//</span><span style="color: #7c6f64;">We're calling out the specific Analog pins we want</span>
+        <span style="color: #fb4933;">if</span> (pin != NO_PIN &amp;&amp; ((pin == F6) | (pin == F5) | (pin == F4) | (pin == F7))) {
+            <span style="color: #7c6f64;">//</span><span style="color: #7c6f64;">We get the atmega32u4's mux from the pin we're reading</span>
+            <span style="color: #d3869b;">uint8_t</span> <span style="color: #83a598;">mux</span> = pinToMux(pin);
+            <span style="color: #7c6f64;">//</span><span style="color: #7c6f64;">This threshold needs some tweaking and should probably be configurable per pin</span>
+            <span style="color: #d3869b;">bool</span> <span style="color: #83a598;">pin_active</span> = adc_read(mux) &gt; 150;
+            current_row_value |= !pin_active ? 0 : row_shifter;
+        }
+    }
+
+    <span style="color: #7c6f64;">// </span><span style="color: #7c6f64;">Update the matrix</span>
+     current_matrix[current_row] = current_row_value;
+}
+
 </pre>
 </div>
 </div>
@@ -61,13 +90,13 @@ As of now, it's still WIP, but I want to share the bit of code I added to the QM
 </div>
 </div>
 
-<div id="outline-container-orgacf6128" class="outline-2">
-<h2 id="orgacf6128">Communities</h2>
-<div class="outline-text-2" id="text-orgacf6128">
+<div id="outline-container-org88bd369" class="outline-2">
+<h2 id="org88bd369">Communities</h2>
+<div class="outline-text-2" id="text-org88bd369">
 </div>
-<div id="outline-container-org62e70fa" class="outline-3">
-<h3 id="org62e70fa">Artsey/Ardux</h3>
-<div class="outline-text-3" id="text-org62e70fa">
+<div id="outline-container-org1ad5486" class="outline-3">
+<h3 id="org1ad5486">Artsey/Ardux</h3>
+<div class="outline-text-3" id="text-org1ad5486">
 <p>
 About a year ago I was looking into handheld keyboards and I came across <a href="https://artsey.io/">Artsey</a>, an 8 key keyboard capable of typing any character. I was intrigued. I ordered a <a href="https://github.com/arduxio/thepaintbrush">Paintbrush</a> and started learning.
 </p>
@@ -77,13 +106,13 @@ It has been about a year, and my typing speed is roughly where I was with qwerty
 </p>
 
 <p>
-These days I daily drive half of a slightly modified 40 percent keyboard I call the Fatlad (a modified version of the <a href="https://github.com/MangoIV/dracuLad">dracuLad</a> keyboard). I've found a wonderful space for others like me who are interested in pushing the boundaries of traditional input devices. We call ourselves <a href="#orgc797847">Inkeys</a>, short for Inclusive Keyboards, but really we discuss any kind of alternate system.
+These days I daily drive half of a slightly modified 40 percent keyboard I call the Fatlad (a modified version of the <a href="https://github.com/MangoIV/dracuLad">dracuLad</a> keyboard). I've found a wonderful space for others like me who are interested in pushing the boundaries of traditional input devices. We call ourselves <a href="#org5756558">Inkeys</a>, short for Inclusive Keyboards, but really we discuss any kind of alternate system.
 </p>
 </div>
 </div>
-<div id="outline-container-orgc797847" class="outline-3">
-<h3 id="orgc797847">Inkeys</h3>
-<div class="outline-text-3" id="text-orgc797847">
+<div id="outline-container-org5756558" class="outline-3">
+<h3 id="org5756558">Inkeys</h3>
+<div class="outline-text-3" id="text-org5756558">
 <p>
 I have recently been made admin of the Inkeys project.
 </p>
@@ -114,7 +143,7 @@ I have recently been made admin of the Inkeys project.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jonathan Kenyon</p>
-<p class="date">Created: 2022-08-10 Wed 15:12</p>
+<p class="date">Created: 2022-08-10 Wed 15:35</p>
 </div>
 </body>
 </html>

@@ -13,7 +13,7 @@
 I fell in love with [[*Artsey/Ardux][Artsey/Ardux]] a while back, and I've wanted to figure out how to put one on my hands at all times. Someone in the Inkeys discord had an idea about having all the keys on a straight line instead of on 2 lines, and I thought it could be cool to put that onto 2 gloves and type that way.
 
 The StraEyio gloves were born
-#+ATTR_HTML: :alt First Prototype :width 200px :height 400px
+#+ATTR_HTML: :alt First Prototype :width 400px :height 711px
 [[file:media/gloves.jpg]]
 
 #+begin_export html
@@ -26,9 +26,38 @@ The StraEyio gloves were born
 After this first attempt, I thought I might need to change my approach. Rather than using a glove, I considered using 3D printed rings to hold the magnets and a strip across the back of the hand to hold the hall effect sensors.
 
 As of now, it's still WIP, but I want to share the bit of code I added to the QMK firmware for this. It is scanning all the defined key pins for an analog value and if it's at a certain threshold then the magnet has moved far enough away from the sensor to trigger a keypress. I will need to find an entry into ZMK to be able to do this wirelessly, however.
-*** TBA
+*** ~straeyio.c~
 #+begin_src c
-  
+  //This header is just the layout file.
+  #include "straeyio.h"
+
+  #include "analog.h"
+
+  void keyboard_post_init_kb(void){
+      analogReference(ADC_REF_POWER);
+  }
+  static pin_t direct_pins[MATRIX_ROWS][MATRIX_COLS] = DIRECT_PINS;
+  void matrix_read_cols_on_row(matrix_row_t current_matrix[], uint8_t current_row) {
+      // Start with a clear matrix row
+      matrix_row_t current_row_value = 0;
+
+      matrix_row_t row_shifter = MATRIX_ROW_SHIFTER;
+      for (uint8_t col_index = 0; col_index < MATRIX_COLS; col_index++, row_shifter <<= 1) {
+          pin_t pin = direct_pins[current_row][col_index];
+          //We're calling out the specific Analog pins we want
+          if (pin != NO_PIN && ((pin == F6) | (pin == F5) | (pin == F4) | (pin == F7))) {
+              //We get the atmega32u4's mux from the pin we're reading
+              uint8_t mux = pinToMux(pin);
+              //This threshold needs some tweaking and should probably be configurable per pin
+              bool pin_active = adc_read(mux) > 150;
+              current_row_value |= !pin_active ? 0 : row_shifter;
+          }
+      }
+
+      // Update the matrix
+       current_matrix[current_row] = current_row_value;
+  }
+
 #+end_src
 
 * Communities
