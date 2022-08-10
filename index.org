@@ -4,7 +4,7 @@
 #+OPTIONS: num:nil
 #+OPTIONS: date:nil
 #+OPTIONS: html-style:nil
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/org.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./css/org.css"/>
 
 
 * Projects
