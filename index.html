@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-08-10 Wed 14:45 -->
+<!-- 2022-08-10 Wed 15:12 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>@granitrocky</title>
@@ -16,32 +16,58 @@
 <h1 class="title">@granitrocky</h1>
 
 
-<div id="outline-container-orgc545d11" class="outline-2">
-<h2 id="orgc545d11">Projects</h2>
-<div class="outline-text-2" id="text-orgc545d11">
+<div id="outline-container-orgdf5e32c" class="outline-2">
+<h2 id="orgdf5e32c">Projects</h2>
+<div class="outline-text-2" id="text-orgdf5e32c">
 </div>
-<div id="outline-container-org27872a3" class="outline-3">
-<h3 id="org27872a3">Artsey glove</h3>
-<div class="outline-text-3" id="text-org27872a3">
+<div id="outline-container-org026f0e4" class="outline-3">
+<h3 id="org026f0e4">Artsey glove</h3>
+<div class="outline-text-3" id="text-org026f0e4">
 <p>
-I fell in love with <a href="#org752546b">Artsey/Ardux</a> a while back, and I've wanted to figure out how to put one on my hands at all times. Someone in the Inkeys discord had an idea about having all the keys on a straight line instead of on 2 lines, and I thought it could be cool to put that onto 2 gloves and type that way.
+I fell in love with <a href="#org62e70fa">Artsey/Ardux</a> a while back, and I've wanted to figure out how to put one on my hands at all times. Someone in the Inkeys discord had an idea about having all the keys on a straight line instead of on 2 lines, and I thought it could be cool to put that onto 2 gloves and type that way.
 </p>
 
 <p>
 The StraEyio gloves were born
-<img src="media/20220808_125306.jpg" alt="20220808_125306.jpg" />
 </p>
+
+<div id="org7b5cb91" class="figure">
+<p><img src="media/gloves.jpg" alt="First Prototype" width="200px" height="400px" />
+</p>
+</div>
+
+<video width="400" controls>
+  <source src="./media/gloves_small.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
+
+<p>
+After this first attempt, I thought I might need to change my approach. Rather than using a glove, I considered using 3D printed rings to hold the magnets and a strip across the back of the hand to hold the hall effect sensors.
+</p>
+
+<p>
+As of now, it's still WIP, but I want to share the bit of code I added to the QMK firmware for this. It is scanning all the defined key pins for an analog value and if it's at a certain threshold then the magnet has moved far enough away from the sensor to trigger a keypress. I will need to find an entry into ZMK to be able to do this wirelessly, however.
+</p>
+</div>
+<div id="outline-container-orge885447" class="outline-4">
+<h4 id="orge885447">TBA</h4>
+<div class="outline-text-4" id="text-orge885447">
+<div class="org-src-container">
+<pre class="src src-c">
+</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgee43fa1" class="outline-2">
-<h2 id="orgee43fa1">Communities</h2>
-<div class="outline-text-2" id="text-orgee43fa1">
+<div id="outline-container-orgacf6128" class="outline-2">
+<h2 id="orgacf6128">Communities</h2>
+<div class="outline-text-2" id="text-orgacf6128">
 </div>
-<div id="outline-container-org752546b" class="outline-3">
-<h3 id="org752546b">Artsey/Ardux</h3>
-<div class="outline-text-3" id="text-org752546b">
+<div id="outline-container-org62e70fa" class="outline-3">
+<h3 id="org62e70fa">Artsey/Ardux</h3>
+<div class="outline-text-3" id="text-org62e70fa">
 <p>
 About a year ago I was looking into handheld keyboards and I came across <a href="https://artsey.io/">Artsey</a>, an 8 key keyboard capable of typing any character. I was intrigued. I ordered a <a href="https://github.com/arduxio/thepaintbrush">Paintbrush</a> and started learning.
 </p>
@@ -51,13 +77,13 @@ It has been about a year, and my typing speed is roughly where I was with qwerty
 </p>
 
 <p>
-These days I daily drive half of a slightly modified 40 percent keyboard I call the Fatlad (a modified version of the <a href="https://github.com/MangoIV/dracuLad">dracuLad</a> keyboard). I've found a wonderful space for others like me who are interested in pushing the boundaries of traditional input devices. We call ourselves <a href="#org30621d7">Inkeys</a>, short for Inclusive Keyboards, but really we discuss any kind of alternate system.
+These days I daily drive half of a slightly modified 40 percent keyboard I call the Fatlad (a modified version of the <a href="https://github.com/MangoIV/dracuLad">dracuLad</a> keyboard). I've found a wonderful space for others like me who are interested in pushing the boundaries of traditional input devices. We call ourselves <a href="#orgc797847">Inkeys</a>, short for Inclusive Keyboards, but really we discuss any kind of alternate system.
 </p>
 </div>
 </div>
-<div id="outline-container-org30621d7" class="outline-3">
-<h3 id="org30621d7">Inkeys</h3>
-<div class="outline-text-3" id="text-org30621d7">
+<div id="outline-container-orgc797847" class="outline-3">
+<h3 id="orgc797847">Inkeys</h3>
+<div class="outline-text-3" id="text-orgc797847">
 <p>
 I have recently been made admin of the Inkeys project.
 </p>
@@ -88,7 +114,7 @@ I have recently been made admin of the Inkeys project.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jonathan Kenyon</p>
-<p class="date">Created: 2022-08-10 Wed 14:45</p>
+<p class="date">Created: 2022-08-10 Wed 15:12</p>
 </div>
 </body>
 </html>

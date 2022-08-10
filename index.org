@@ -13,7 +13,23 @@
 I fell in love with [[*Artsey/Ardux][Artsey/Ardux]] a while back, and I've wanted to figure out how to put one on my hands at all times. Someone in the Inkeys discord had an idea about having all the keys on a straight line instead of on 2 lines, and I thought it could be cool to put that onto 2 gloves and type that way.
 
 The StraEyio gloves were born
-[[file:media/20220808_125306.jpg]]
+#+ATTR_HTML: :alt First Prototype :width 200px :height 400px
+[[file:media/gloves.jpg]]
+
+#+begin_export html
+<video width="400" controls>
+  <source src="./media/gloves_small.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
+#+end_export
+
+After this first attempt, I thought I might need to change my approach. Rather than using a glove, I considered using 3D printed rings to hold the magnets and a strip across the back of the hand to hold the hall effect sensors.
+
+As of now, it's still WIP, but I want to share the bit of code I added to the QMK firmware for this. It is scanning all the defined key pins for an analog value and if it's at a certain threshold then the magnet has moved far enough away from the sensor to trigger a keypress. I will need to find an entry into ZMK to be able to do this wirelessly, however.
+*** TBA
+#+begin_src c
+  
+#+end_src
 
 * Communities
 ** Artsey/Ardux
