@@ -13,7 +13,7 @@
 I fell in love with [[*Artsey/Ardux][Artsey/Ardux]] a while back, and I've wanted to figure out how to put one on my hands at all times. Someone in the Inkeys discord had an idea about having all the keys on a straight line instead of on 2 lines, and I thought it could be cool to put that onto 2 gloves and type that way.
 
 The StraEyio gloves were born
-[[file:media/20220808_125306.jpg][First Prototype]]
+[[file:media/20220808_125306.jpg]]
 
 * Communities
 ** Artsey/Ardux
